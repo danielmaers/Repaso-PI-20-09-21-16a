@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING
     },
     image:{
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type: DataTypes.STRING
     },
     location:{
       type: DataTypes.STRING
