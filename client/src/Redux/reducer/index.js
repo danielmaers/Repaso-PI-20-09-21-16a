@@ -18,11 +18,7 @@ export default function reducer (state = initialState, {type, payload}){
                ...state,
                 characters: payload
             }
-        case RESET_ALL_CHARACTERS:
-            return {
-               ...state,
-                characters: []
-            }
+        
     
         default:
             return state

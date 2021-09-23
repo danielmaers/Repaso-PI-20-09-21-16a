@@ -61,7 +61,7 @@ async function getCharacters(req, res, next){
         //#endregion
         
         //#region ORDER
-        if(order === "asc" || !order){
+        if(order === "asc" || !order || order === ""){
             allChars = allChars.sort((a,b) =>{
                 return a.name.toLowerCase().localeCompare(b.name.toLowerCase())
             })
