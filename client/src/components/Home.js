@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {getCharacters} from "../Redux/actions/index.js";
+import {getCharacters ,setPage} from "../Redux/actions/index.js";
 import Card from "./Card.js"
 
 
 
 const Home = () => {
     const dispatch = useDispatch()
-    const {characters} = useSelector(state=> state)
-    const [page,setPage] = useState(1)
+    const { characters, name, order, page } = useSelector(state=> state)
+   
     
     useEffect(()=>{
        dispatch(getCharacters({})) 
     },[dispatch])
 
     const changePage = (page)=>{
-        dispatch(getCharacters({page}))
-        setPage(page)
+        dispatch(getCharacters({page,name,order}))
+        dispatch(setPage(page))
     }
     
     return (
@@ -27,7 +27,7 @@ const Home = () => {
                    return <Card image={e.image} name={e.name} key={e.id}/>
                 })
             }
-                <button disabled={page -1 === 0} onClick={()=> {changePage(page -1)}}>preview</button>
+                <button disabled={page -1 === 0} onClick={()=> {changePage(page -1)}}>previous</button>
                     <label>{page}</label>
                 <button disabled={characters?.count <= (page * 5)} onClick={()=>{changePage(page +1)}}>next</button>
             
