@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {getCharacters ,setPage} from "../Redux/actions/index.js";
@@ -9,6 +9,7 @@ import Card from "./Card.js"
 const Home = () => {
     const dispatch = useDispatch()
     const { characters, name, order, page } = useSelector(state=> state)
+    
    
     
     useEffect(()=>{
@@ -24,7 +25,7 @@ const Home = () => {
         <div>
             {
                 characters?.result?.length>0 && characters.result.map((e)=>{
-                   return <Card image={e.image} name={e.name} key={e.id}/>
+                   return <Card status={e.status} image={e.image} name={e.name} id={e.id} key={e.id}/>
                 })
             }
                 <button disabled={page -1 === 0} onClick={()=> {changePage(page -1)}}>previous</button>

@@ -1,5 +1,5 @@
 * ~~nav~~
-* detail
+* ~~detail~~
 * filtros
 * ~~search~~
 * form
