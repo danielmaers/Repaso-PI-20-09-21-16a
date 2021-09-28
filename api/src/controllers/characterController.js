@@ -22,7 +22,6 @@ const addCharacter = (req,res, next)=>{
    
 }
 
-//este es un comentario de la ramadeprueba1
 
 async function getCharacters(req, res, next){
     try {
