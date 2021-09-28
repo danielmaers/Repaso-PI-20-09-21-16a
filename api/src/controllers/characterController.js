@@ -22,6 +22,9 @@ const addCharacter = (req,res, next)=>{
    
 }
 //comentario de ejemplo
+function ejemplo(){
+    console.log("esto es un ejemplo")
+}
 
 async function getCharacters(req, res, next){
     try {
