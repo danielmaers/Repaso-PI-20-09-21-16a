@@ -11,6 +11,6 @@ const router = Router();
 router.use("/characters", characters )
 router.use("/episodes", episodes )
 
-//comentario de prueba para rama prueba1
+
 
 module.exports = router;
