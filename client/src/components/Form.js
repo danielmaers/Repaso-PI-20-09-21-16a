@@ -17,7 +17,6 @@ function Form() {
     useEffect(()=>{
         dispatch(getEpisodes())
     },[dispatch])
-
     const onSubmit = (e)=>{
         e.preventDefault()
         dispatch(createCharacter(formulario))
@@ -30,7 +29,6 @@ function Form() {
             episode:0
         })
     }
-
     const handleOnChange = (e)=>{
         setFormulario({
             ...formulario,
