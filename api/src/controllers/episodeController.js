@@ -10,13 +10,9 @@ async function preEpisode(){
                name: e.name,
                episode: e.episode
             }
-        })
- 
-      episodes = await Promise.all(episodes.map(e=> Episodes.findOrCreate({where:e})))
- 
- 
-      return "Episodios cargados exitosamente"
- 
+        }) 
+      episodes = await Promise.all(episodes.map(e=> Episodes.findOrCreate({where:e}))) 
+      return "Episodios cargados exitosamente" 
      } catch (error) {
         return "No se pudo cargar los episodios"
      }
@@ -26,7 +22,6 @@ async function getEpisodes(req, res, next){
     try {
        let episodes = await Episodes.findAll()
      res.json(episodes)
-
     } catch (error) {
         next(error)
     }
