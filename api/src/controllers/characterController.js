@@ -3,6 +3,7 @@ const { v4: uuidv4 } = require("uuid");
 const axios = require("axios");
 
 const addCharacter = (req,res, next)=>{
+    //este es un comentario
     const { name, status, gender, image, location, episode } = req.body;
     let character= {
         name,
